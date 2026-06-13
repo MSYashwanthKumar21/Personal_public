@@ -1,0 +1,58 @@
+{
+  "personalInfo": {
+    "name": "M S Yashwanth Kumar",
+    "role": "AI Engineer | Full Stack Developer | GenAI Builder",
+    "email": "Contact via portfolio"
+  },
+  "education": [
+    {
+      "degree": "B.E Computer Science Engineering",
+      "institution": "RN Shetty Institute of Technology",
+      "cgpa": "7.7"
+    }
+  ],
+  "experience": [
+    {
+      "role": "GenAI Android App Development Intern",
+      "company": "MindMatrix",
+      "duration": "Feb 2026 - May 2026",
+      "details": [
+        "Integrated LLM APIs for intelligent mobile features.",
+        "Built AI-enabled Android applications from scratch.",
+        "Designed responsive and intuitive mobile interfaces."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Janatha App",
+      "description": "A civic engagement platform designed to bridge the gap between citizens and their elected representatives. It allows citizens to raise local issues or complaints, which are automatically categorized and prioritized using Artificial Intelligence, and then routed directly to the dashboards of the appropriate MLA or the CM for resolution.",
+      "techStack": "Frontend: Android (Kotlin, Jetpack Compose, Retrofit, osmdroid). Backend: Node.js (TypeScript, Express.js, SQLite, JWT Auth, Groq AI SDK).",
+      "coreWorkflow": "1. Citizen raises issue with location. 2. Groq AI categorizes issue and determines priority. 3. Issue is routed directly to specific MLA Dashboard.",
+      "currentStatus": "The core mechanics and fundamental features are implemented. I am currently advancing towards online tender bidding, end-to-end encryption, and advanced database management."
+    },
+    {
+      "name": "Gesture-Drive",
+      "description": "AI + IoT Vehicle Control System using OpenCV, Raspberry Pi. 94% gesture recognition accuracy."
+    },
+    {
+      "name": "TravelSecure",
+      "description": "Group Travel Safety App using React Native, Firebase, Mapbox API."
+    },
+    {
+      "name": "Personal AI Recruiter Agent (This App)",
+      "description": "An interactive AI agent embedded directly in this portfolio to answer questions about Yashwanth. Tech Stack: Next.js 14 (App Router), Vercel AI SDK, React-Markdown, Tailwind CSS, Framer Motion. Backend: Powered by Groq's blazing fast 'llama-3.1-8b-instant' model, fetching dynamic context via an internal knowledge base with ultra-low latency data streaming."
+    }
+  ],
+  "skills": [
+    "Python", "C++", "C", "SQL", 
+    "LangChain", "LangGraph", "OpenCV", "Computer Vision", "RAG", 
+    "React Native", "Firebase", "MERN", "Azure", "GCP"
+  ],
+  "hobbies": [
+    "Reading books (History, famous personalities)",
+    "Volunteering (Completed 50 hours at Youth For Seva)",
+    "Getting updated on current affairs",
+    "Playing games"
+  ]
+}
