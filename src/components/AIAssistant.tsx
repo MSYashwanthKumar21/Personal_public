@@ -291,7 +291,11 @@ export function AIAssistant() {
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      handleSubmit(e);
+                      handleSubmit(e, {
+                        data: {
+                          visitorName: isNameSet ? visitorName : "Anonymous"
+                        }
+                      });
                     }}
                     className="flex gap-2"
                   >

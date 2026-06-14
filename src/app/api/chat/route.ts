@@ -40,7 +40,14 @@ export async function POST(req: NextRequest) {
       baseURL: "https://api.groq.com/openai/v1",
     });
 
-    const { messages, visitorName } = await req.json();
+    const body = await req.json();
+    const messages = body.messages;
+    
+    // Extract visitorName from either the root, or the data object sent by handleSubmit
+    let visitorName = body.visitorName;
+    if (!visitorName && body.data && body.data.visitorName) {
+      visitorName = body.data.visitorName;
+    }
 
     // --- DISCORD NOTIFICATION ---
     const discordWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
