@@ -15,7 +15,6 @@ import remarkGfm from "remark-gfm";
 const suggestedQuestions = [
   "Can I download your resume?",
   "What is his experience with LangChain?",
-  "Does he know React Native?",
   "Summarize his resume in 30 seconds."
 ];
 
