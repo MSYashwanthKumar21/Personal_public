@@ -2,13 +2,15 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, Mail, Globe, GitBranch, ChevronRight, ExternalLink, Calendar, MapPin, Sparkles, Code2, Cpu, Database, Cloud, Briefcase, X, Play } from "lucide-react";
+import { Download, Mail, Globe, GitBranch, ChevronRight, ExternalLink, Calendar, MapPin, Sparkles, Code2, Cpu, Database, Cloud, Briefcase, X, Play, BookOpen, Terminal, Network, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { AIAssistant } from "@/components/AIAssistant";
 import { JanathaDetails } from "@/components/JanathaDetails";
+import { GestureDriveDetails } from "@/components/GestureDriveDetails";
+import { TravelSecureDetails } from "@/components/TravelSecureDetails";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -24,6 +26,58 @@ const staggerContainer = {
     }
   }
 };
+
+const selfLearningData = [
+  {
+    title: "AI & Generative AI",
+    badge: "Advanced Exploration",
+    icon: <Cpu className="w-6 h-6 text-primary" />,
+    description: "Deep diving into LLM architectures, Autonomous AI Agents, LangChain, LangGraph, RAG pipelines, and vector database integrations.",
+    topics: ["LangChain & LangGraph", "AI Agents & RAG", "Prompt Engineering", "OpenCV & Vision"]
+  },
+  {
+    title: "Computer Networking (CCNA)",
+    badge: "CCNA Prep",
+    icon: <Network className="w-6 h-6 text-primary" />,
+    description: "Studying core Cisco networking principles including IPv4/IPv6 subnetting, TCP/IP protocols, VLANs, routing protocols, and network security essentials.",
+    topics: ["TCP/IP & OSI Model", "Subnetting & Routing", "Switching & VLANs", "Network Security"]
+  },
+  {
+    title: "Cloud Platforms (Azure & GCP)",
+    badge: "Cloud Skills",
+    icon: <Cloud className="w-6 h-6 text-primary" />,
+    description: "Building practical cloud skills on Microsoft Azure and Google Cloud Platform — compute, storage, serverless, IAM, and deploying AI workloads at scale.",
+    topics: ["Azure Compute & Storage", "GCP AI & ML", "Serverless Functions", "Cloud IAM & Security"]
+  },
+  {
+    title: "Linux & System Administration (RHCSA)",
+    badge: "RHCSA Focused",
+    icon: <Terminal className="w-6 h-6 text-primary" />,
+    description: "Mastering Red Hat Enterprise Linux (RHEL) system administration, shell scripting, user management, systemd services, and storage configuration.",
+    topics: ["Linux CLI & Bash", "User & Permission Mgmt", "Systemd Services", "LVM & Storage"]
+  },
+  {
+    title: "Semiconductor Validation & Power Management",
+    badge: "Professional Domain",
+    icon: <Zap className="w-6 h-6 text-primary" />,
+    description: "Hands-on professional experience in post-silicon semiconductor validation at UST Global, working with power management ICs for a leading semiconductor client.",
+    topics: ["Post Silicon Validation", "Power Management ICs", "Test Plan Execution", "Hardware Debugging"]
+  },
+  {
+    title: "Industrial Automation, SCADA & BESS",
+    badge: "Domain Expansion",
+    icon: <Zap className="w-6 h-6 text-primary" />,
+    description: "Expanding technical breadth into SCADA telemetry, industrial IoT protocols, PLC concepts, and Battery Energy Storage Systems (BESS).",
+    topics: ["SCADA & Telemetry", "Industrial IoT", "BESS Architecture", "Control Systems"]
+  }
+];
+
+const hobbiesData = [
+  { id: "reading", title: "Reading Books", desc: "Passionate about History and biographies of famous personalities." },
+  { id: "volunteering", title: "Volunteering", desc: "Completed 50 hours of volunteering at Youth For Seva. Click to view certificate.", image: "/volunteering.jpeg", longDesc: "I have dedicated 50 hours of volunteering work at Youth For Seva, contributing to various social causes and community development programs. This experience has helped me develop strong communication skills, empathy, and a deeper understanding of grassroots challenges." },
+  { id: "current-affairs", title: "Current Affairs", desc: "Staying updated on global tech and socio-economic trends." },
+  { id: "gaming", title: "Gaming", desc: "Playing strategic and team-based games." }
+];
 
 const projectsData = [
   {
@@ -56,33 +110,58 @@ const projectsData = [
     badgeBorder: "border-primary/20",
     badgeText: "text-primary/80",
     modalSubtitle: "text-primary",
-    longDesc: "A hardware-software integrated system using Computer Vision and Raspberry Pi to control vehicles with high accuracy. Implements deep learning models for real-time hand gesture recognition.",
+    longDesc: "The Hand Gesture Controlled Robotic Vehicle is an intelligent wireless robotic system that enables users to control a robot using hand gestures detected through a webcam. The system combines Computer Vision, Wireless Communication, Embedded Systems, and Robotics to create a touchless human-machine interaction platform.",
     demoVideo: null,
-    snippets: []
+    snippets: [
+      "MediaPipe Hand Landmark Detection",
+      "Wireless UDP Command Protocol",
+      "Raspberry Pi 5 Motor Control"
+    ]
   },
   {
     id: "travelsecure",
     title: "TravelSecure",
-    description: "Group Travel Safety Application",
-    shortDesc: "A mobile application ensuring group travel safety with live tracking, panic alerts, and expense management.",
-    tags: ["React Native", "Firebase", "Mapbox API", "GPS Tracking"],
+    description: "Smart Travel Companion & Safety Platform",
+    shortDesc: "A mobile application ensuring traveler safety with real-time location mapping, SOS panic alerts, and AI-powered trip planning.",
+    tags: ["React Native", "Firebase", "OpenStreetMap", "Flask Server", "LLM APIs"],
     gradient: "from-blue-500/10",
     hoverTitle: "group-hover:text-blue-400",
     badgeBorder: "border-blue-500/20",
     badgeText: "text-blue-400/80",
     modalSubtitle: "text-blue-400",
-    longDesc: "A mobile application ensuring group travel safety with live tracking, panic alerts, and expense management. Provides real-time synchronization across group members.",
+    longDesc: "TravelSecure is a premium mobile application designed to protect and assist travelers. It combines real-time location mapping, decentralized walkie-talkie communication, custom budgeting modules, AI-driven trip itinerary planners, and an active emergency beacon system to keep travelers safe and connected.",
     demoVideo: null,
-    snippets: []
+    snippets: [
+      "Interactive OpenStreetMap Overpass Red Pins",
+      "Custom AI Trip Planners & Budget Estimators",
+      "High-Contrast Emergency SOS Alarm Console",
+      "Real-Time Community Chats & Speedometer Sync"
+    ]
   }
 ];
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [selectedHobby, setSelectedHobby] = useState<string | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const viewTimerRef = useRef<{ id: string, title: string, startTime: number } | null>(null);
 
+  const hasNotified = useRef(false);
   useEffect(() => {
+    if (!hasNotified.current) {
+      hasNotified.current = true;
+      let visitorName = "Anonymous Visitor";
+      try {
+        visitorName = localStorage.getItem("visitorName") || "Anonymous Visitor";
+      } catch (e) {}
+      fetch("/api/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "website_opened", visitorName }),
+        cache: "no-store"
+      }).catch(console.error);
+    }
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
@@ -92,11 +171,15 @@ export default function Home() {
 
   const handleProjectClick = (project: any) => {
     setSelectedProject(project.id);
-    const visitorName = localStorage.getItem("visitorName") || "Anonymous Visitor";
+    let visitorName = "Anonymous Visitor";
+    try {
+      visitorName = localStorage.getItem("visitorName") || "Anonymous Visitor";
+    } catch (e) {}
     fetch("/api/notify", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action: "view_project", visitorName, projectName: project.title })
+      body: JSON.stringify({ action: "view_project", visitorName, projectName: project.title }),
+      cache: "no-store"
     }).catch(console.error);
     
     viewTimerRef.current = { id: project.id, title: project.title, startTime: Date.now() };
@@ -104,24 +187,10 @@ export default function Home() {
 
   const handleCloseModal = () => {
     if (viewTimerRef.current) {
-      const durationSec = Math.floor((Date.now() - viewTimerRef.current.startTime) / 1000);
-      const visitorName = localStorage.getItem("visitorName") || "Anonymous Visitor";
-      
-      if (durationSec >= 2) {
-        fetch("/api/notify", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ 
-            action: "close_project", 
-            visitorName, 
-            projectName: viewTimerRef.current.title,
-            duration: durationSec
-          })
-        }).catch(console.error);
-      }
       viewTimerRef.current = null;
     }
     setSelectedProject(null);
+    setSelectedHobby(null);
   };
 
   return (
@@ -155,7 +224,7 @@ export default function Home() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </div>
-                <span>Available for Hire</span>
+                <span>Currently @ UST Global</span>
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium border border-white/5">
                 <MapPin className="w-4 h-4 text-primary" />
@@ -164,12 +233,15 @@ export default function Home() {
             </motion.div>
             
             <motion.div variants={fadeInUp} className="space-y-4">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
                 M S Yashwanth <br className="hidden md:block" />
                 <span className="gradient-text">Kumar</span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
-                AI Engineer & Full Stack Developer building intelligent systems and dynamic web applications.
+              <h2 className="text-xl md:text-2xl font-semibold text-primary/90 tracking-wide">
+                AI &amp; Software Engineer | Semiconductor Validation | Networking &amp; Cloud
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+                Computer Science Engineering graduate with hands-on experience in Post Silicon Semiconductor Validation at UST Global, supporting a Power Management domain client. Skilled in building intelligent software solutions using Generative AI, LangChain, LangGraph, and Python. Experienced across AI-enabled applications, computer vision, Android development, IoT, and full-stack systems. Actively leveling up in computer networking (CCNA), cloud platforms (Azure &amp; GCP), Linux, and SCADA.
               </p>
             </motion.div>
 
@@ -181,7 +253,7 @@ export default function Home() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="rounded-full glassmorphism" asChild>
-                <a href="/resume.pdf" download>
+                <a href="/resume.pdf" download="M_S_Yashwanth_Kumar_Resume.pdf">
                   <Download className="w-4 h-4 mr-2" />
                   Download Resume
                 </a>
@@ -204,11 +276,11 @@ export default function Home() {
           {/* Right Content - Profile Image */}
           <motion.div variants={fadeInUp} className="relative flex-shrink-0 w-64 h-64 md:w-80 md:h-80 mx-auto md:mx-0">
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full animate-pulse" />
-            <div className="absolute inset-0 rounded-full border-2 border-primary/50 shadow-[0_0_30px_rgba(99,102,241,0.5)] overflow-hidden glassmorphism hover:scale-105 hover:shadow-[0_0_50px_rgba(99,102,241,0.7)] transition-all duration-500 cursor-pointer">
+            <div className="absolute inset-0 rounded-full border-2 border-primary/50 shadow-[0_0_30px_rgba(99,102,241,0.5)] overflow-hidden glassmorphism hover:scale-[1.03] hover:shadow-[0_0_50px_rgba(99,102,241,0.7)] transition-all duration-500 cursor-pointer">
               <img 
                 src="/profile.jpg" 
                 alt="M S Yashwanth Kumar" 
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover object-top scale-[0.95] translate-y-[1%] hover:scale-100 transition-transform duration-700 rounded-full"
               />
             </div>
           </motion.div>
@@ -242,7 +314,7 @@ export default function Home() {
           <Card className="glassmorphism border-white/5 bg-secondary/30 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-500">
             <CardContent className="p-6 md:p-8">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Computer Science Engineering graduate with strong foundations in Data Structures, Algorithms, OOP, Operating Systems, and Computer Networks. Passionate about AI agents, LangChain, LangGraph, and building LLM-powered applications that solve real-world problems.
+                Computer Science Engineering graduate with hands-on professional experience in Post Silicon Semiconductor Validation at UST Global, working in the Power Management domain. Skilled in building intelligent software solutions using Generative AI, LangChain, LangGraph, and Python. Experienced across AI-enabled applications, computer vision, Android development, IoT, and full-stack systems. Actively deepening expertise in AI, computer networking (CCNA), cloud platforms (Azure &amp; GCP), Linux (RHCSA), SCADA, and semiconductor validation — driven to build reliable, intelligent solutions that bridge software and hardware domains.
               </p>
             </CardContent>
           </Card>
@@ -263,9 +335,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: "Languages", icon: <Code2 className="w-8 h-8 mb-4 text-primary drop-shadow-[0_0_10px_rgba(99,102,241,0.6)]" />, skills: ["Python", "C++", "C", "SQL"] },
-              { title: "AI & LLM", icon: <Cpu className="w-8 h-8 mb-4 text-primary drop-shadow-[0_0_10px_rgba(99,102,241,0.6)]" />, skills: ["LangChain", "LangGraph", "OpenCV", "Computer Vision", "RAG Systems", "AI Agents"] },
-              { title: "Mobile & Web", icon: <Database className="w-8 h-8 mb-4 text-primary drop-shadow-[0_0_10px_rgba(99,102,241,0.6)]" />, skills: ["React Native", "Firebase", "MERN Stack", "JavaScript", "HTML", "CSS"] },
-              { title: "Cloud & Tools", icon: <Cloud className="w-8 h-8 mb-4 text-primary drop-shadow-[0_0_10px_rgba(99,102,241,0.6)]" />, skills: ["Azure", "GCP", "Git", "REST APIs", "Power BI", "Raspberry Pi"] }
+              { title: "AI & LLM", icon: <Cpu className="w-8 h-8 mb-4 text-primary drop-shadow-[0_0_10px_rgba(99,102,241,0.6)]" />, skills: ["LangChain", "LangGraph", "OpenCV", "Computer Vision", "RAG Systems", "AI Agents", "Generative AI"] },
+              { title: "Networking & Cloud", icon: <Cloud className="w-8 h-8 mb-4 text-primary drop-shadow-[0_0_10px_rgba(99,102,241,0.6)]" />, skills: ["Networking (CCNA)", "Azure", "GCP", "Linux (RHCSA)", "REST APIs", "Git", "Firebase"] },
+              { title: "Semiconductor & Systems", icon: <Database className="w-8 h-8 mb-4 text-primary drop-shadow-[0_0_10px_rgba(99,102,241,0.6)]" />, skills: ["Post Silicon Validation", "Power Management ICs", "Hardware Debugging", "SCADA", "Industrial Automation", "BESS", "Raspberry Pi", "React Native", "MERN Stack"] }
             ].map((category, i) => (
               <motion.div key={i} variants={fadeInUp}>
                 <Card className="h-full glassmorphism border-white/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-500">
@@ -286,6 +358,51 @@ export default function Home() {
           </div>
         </motion.section>
 
+        {/* SELF-LEARNING & SKILL EXPANSION SECTION */}
+        <motion.section 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="space-y-8"
+        >
+          <motion.h2 variants={fadeInUp} className="text-3xl font-bold flex items-center gap-2">
+            <BookOpen className="w-10 h-10 text-primary drop-shadow-[0_0_15px_rgba(99,102,241,0.8)]" />
+            Continuous &amp; Self-Learning
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {selfLearningData.map((item, i) => (
+              <motion.div key={i} variants={fadeInUp}>
+                <Card className="h-full glassmorphism border-white/5 bg-secondary/30 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-500">
+                  <CardHeader className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 w-fit">
+                        {item.icon}
+                      </div>
+                      <Badge variant="outline" className="border-primary/30 text-primary bg-primary/5 text-xs font-semibold">
+                        {item.badge}
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-xl pt-2">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 pt-2">
+                      {item.topics.map((topic, j) => (
+                        <Badge key={j} variant="secondary" className="bg-secondary/60 text-xs font-normal border border-white/5">
+                          {topic}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
         {/* EXPERIENCE SECTION */}
         <motion.section 
           initial="hidden"
@@ -299,6 +416,37 @@ export default function Home() {
             Experience
           </h2>
           <div className="relative pl-8 border-l border-white/10 space-y-12">
+            {/* UST Global - Current Role */}
+            <div className="relative group cursor-pointer">
+              <div className="absolute -left-[41px] top-4 h-5 w-5 rounded-full bg-green-500 ring-4 ring-background group-hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] group-hover:scale-125 transition-all duration-500 z-10" />
+              <div className="space-y-3 p-6 -mt-6 -ml-4 rounded-2xl border border-transparent group-hover:border-green-500/30 group-hover:bg-green-500/5 group-hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-500">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                  <h3 className="text-xl font-bold">Post Silicon Semiconductor Validation Engineer</h3>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-bold border border-green-500/20">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+                      </span>
+                      Current Role
+                    </div>
+                    <Badge variant="outline" className="w-fit flex items-center gap-1">
+                      <Calendar className="w-3 h-3" /> Aug 2026 – Present
+                    </Badge>
+                  </div>
+                </div>
+                <h4 className="text-green-400 font-medium text-lg">UST Global <span className="text-muted-foreground text-sm font-normal">· Power Management Domain Client</span></h4>
+                <ul className="space-y-2 text-muted-foreground list-disc list-inside marker:text-green-500/50">
+                  <li>Working as a Post Silicon Semiconductor Validation Engineer, supporting a leading Power Management domain client.</li>
+                  <li>Performing post-silicon validation and functional testing of power management ICs and semiconductor devices.</li>
+                  <li>Collaborating with hardware and firmware teams to identify, debug, and document silicon-level issues.</li>
+                  <li>Executing test plans and validation scripts to verify device specifications and power delivery behavior.</li>
+                  <li>Analyzing test results and generating reports to ensure product quality and compliance.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* MindMatrix - Internship */}
             <div className="relative group cursor-pointer">
               <div className="absolute -left-[41px] top-4 h-5 w-5 rounded-full bg-primary ring-4 ring-background group-hover:shadow-[0_0_20px_rgba(99,102,241,0.8)] group-hover:scale-125 transition-all duration-500 z-10" />
               <div className="space-y-3 p-6 -mt-6 -ml-4 rounded-2xl border border-transparent group-hover:border-primary/30 group-hover:bg-primary/5 group-hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] transition-all duration-500">
@@ -342,19 +490,22 @@ export default function Home() {
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                   <CardHeader>
-                    <CardTitle className={`text-2xl ${project.hoverTitle} transition-colors`}>{project.title}</CardTitle>
-                    <CardDescription>{project.description}</CardDescription>
+                    <CardTitle className={`text-2xl ${project.hoverTitle} transition-colors relative z-10`}>{project.title}</CardTitle>
+                    <CardDescription className="relative z-10">{project.description}</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-4 relative z-10">
                     <p className="text-muted-foreground">
                       {project.shortDesc}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag, i) => (
-                        <Badge key={i} variant="outline" className={`${project.badgeBorder} ${project.badgeText}`}>
+                        <Badge key={i} variant="outline" className={`${project.badgeBorder} ${project.badgeText} bg-background/50`}>
                           {tag}
                         </Badge>
                       ))}
+                    </div>
+                    <div className={`pt-2 text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity ${project.modalSubtitle}`}>
+                      <ExternalLink className="w-4 h-4" /> View Details
                     </div>
                   </CardContent>
                 </Card>
@@ -376,19 +527,22 @@ export default function Home() {
             Hobbies & Extracurriculars
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { title: "Reading Books", desc: "Passionate about History and biographies of famous personalities." },
-              { title: "Volunteering", desc: "Completed 50 hours of volunteering at Youth For Seva." },
-              { title: "Current Affairs", desc: "Staying updated on global tech and socio-economic trends." },
-              { title: "Gaming", desc: "Playing strategic and team-based games." }
-            ].map((hobby, i) => (
+            {hobbiesData.map((hobby, i) => (
               <motion.div key={i} variants={fadeInUp}>
-                <Card className="glassmorphism bg-secondary/30 border-white/5 h-full hover:border-primary/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-500">
+                <Card 
+                  className={`glassmorphism bg-secondary/30 border-white/5 h-full hover:border-primary/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-500 ${hobby.image ? 'cursor-pointer group' : ''}`}
+                  onClick={() => hobby.image && setSelectedHobby(hobby.id)}
+                >
                   <CardHeader>
-                    <CardTitle className="text-lg">{hobby.title}</CardTitle>
+                    <CardTitle className={`text-lg ${hobby.image ? 'group-hover:text-primary transition-colors' : ''}`}>{hobby.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">{hobby.desc}</p>
+                    {hobby.image && (
+                      <div className="mt-4 text-sm text-primary font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ExternalLink className="w-4 h-4" /> View Image
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               </motion.div>
@@ -508,8 +662,10 @@ export default function Home() {
                   )}
 
                   {project.id === "janatha" && <JanathaDetails />}
+                  {project.id === "gesture-drive" && <GestureDriveDetails />}
+                  {project.id === "travelsecure" && <TravelSecureDetails />}
                   
-                  {project.id !== "janatha" && (
+                  {project.id !== "janatha" && project.id !== "gesture-drive" && project.id !== "travelsecure" && (
                     <div className="pt-4">
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, i) => (
@@ -517,6 +673,64 @@ export default function Home() {
                             {tag}
                           </Badge>
                         ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            </motion.div>
+          );
+        })()}
+      </AnimatePresence>
+
+      {/* HOBBY MODAL */}
+      <AnimatePresence>
+        {selectedHobby && (() => {
+          const hobby = hobbiesData.find(h => h.id === selectedHobby);
+          if (!hobby) return null;
+          return (
+            <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              exit={{ opacity: 0 }} 
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm"
+              onClick={handleCloseModal}
+            >
+              <motion.div 
+                initial={{ scale: 0.95, opacity: 0, y: 20 }} 
+                animate={{ scale: 1, opacity: 1, y: 0 }} 
+                exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
+                onClick={(e) => e.stopPropagation()}
+                className="bg-card border border-white/10 rounded-xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto glassmorphism relative"
+              >
+                <div className="p-6 md:p-8 space-y-6">
+                  <div className="flex justify-between items-start">
+                    <div className="pr-8">
+                      <h3 className="text-3xl font-bold">{hobby.title}</h3>
+                    </div>
+                    <Button variant="ghost" size="icon" className="absolute top-4 right-4 rounded-full hover:bg-white/10" onClick={handleCloseModal}>
+                      <X className="w-5 h-5" />
+                    </Button>
+                  </div>
+                  
+                  <Separator className="bg-white/10" />
+                  
+                  {hobby.longDesc && (
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                      {hobby.longDesc}
+                    </p>
+                  )}
+                  
+                  {hobby.image && (
+                    <div className="space-y-3">
+                      <div className="bg-black/80 rounded-xl overflow-hidden border border-white/10 relative flex items-center justify-center shadow-2xl">
+                        <img 
+                          src={hobby.image} 
+                          alt={hobby.title}
+                          className="w-full max-h-[60vh] object-contain" 
+                        />
+                        <div className="absolute inset-0 pointer-events-none border border-white/10 rounded-xl z-10 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]" />
                       </div>
                     </div>
                   )}

@@ -1,7 +1,8 @@
 {
   "personalInfo": {
     "name": "M S Yashwanth Kumar",
-    "role": "AI Engineer | Full Stack Developer | GenAI Builder",
+    "role": "AI & Software Engineer | Semiconductor Validation | Networking & Cloud",
+    "description": "Computer Science Engineering graduate with hands-on experience in Post Silicon Semiconductor Validation at UST Global, working in the Power Management domain for a leading semiconductor client. Skilled in building intelligent software solutions using Generative AI, LangChain, LangGraph, Python, and modern development technologies. Experienced in AI-enabled applications, computer vision, Android development, IoT, and full-stack systems. Actively expanding expertise in computer networking (CCNA), cloud platforms (Azure, GCP), Linux, SCADA, and industrial automation — with a strong drive to build reliable, intelligent solutions across technology and semiconductor domains.",
     "email": "Contact via portfolio"
   },
   "education": [
@@ -12,6 +13,19 @@
     }
   ],
   "experience": [
+    {
+      "role": "Post Silicon Semiconductor Validation Engineer",
+      "company": "UST Global",
+      "client": "Power Management Domain Client",
+      "duration": "Aug 2026 - Present",
+      "details": [
+        "Working as a Post Silicon Semiconductor Validation Engineer at UST Global, supporting a client in the Power Management domain.",
+        "Performing post-silicon validation and functional testing of power management ICs and semiconductor devices.",
+        "Collaborating with hardware and firmware teams to identify, debug, and document silicon-level issues.",
+        "Executing test plans and validation scripts to verify device specifications and power delivery behavior.",
+        "Analyzing test results and generating reports to ensure product quality and compliance."
+      ]
+    },
     {
       "role": "GenAI Android App Development Intern",
       "company": "MindMatrix",
@@ -45,9 +59,38 @@
     }
   ],
   "skills": [
-    "Python", "C++", "C", "SQL", 
-    "LangChain", "LangGraph", "OpenCV", "Computer Vision", "RAG", 
-    "React Native", "Firebase", "MERN", "Azure", "GCP"
+    "Python", "C++", "C", "SQL",
+    "LangChain", "LangGraph", "OpenCV", "Computer Vision", "RAG", "Generative AI",
+    "React Native", "Firebase", "MERN", "JavaScript",
+    "Azure", "GCP", "Cloud Platforms",
+    "Networking (CCNA)", "Linux (RHCSA)", "SCADA", "Industrial Automation", "BESS",
+    "Semiconductor Validation", "Post Silicon Validation", "Power Management ICs", "Hardware Debugging"
+  ],
+  "selfLearning": [
+    {
+      "topic": "AI & Generative AI",
+      "details": "Building autonomous AI agents, multi-agent workflows using LangChain and LangGraph, RAG architectures, and fine-tuning LLMs."
+    },
+    {
+      "topic": "Linux & System Administration (RHCSA)",
+      "details": "Developing strong proficiency in Red Hat Enterprise Linux (RHCSA) administration, shell scripting, process management, user permissions, and storage configuration."
+    },
+    {
+      "topic": "Computer Networking (CCNA)",
+      "details": "Mastering Cisco Certified Network Associate (CCNA) fundamentals including IPv4/v6 subnetting, TCP/IP protocols, VLANs, IP routing, and network security."
+    },
+    {
+      "topic": "Cloud Platforms (Azure & GCP)",
+      "details": "Building practical skills on Microsoft Azure and Google Cloud Platform — cloud compute, storage, serverless functions, IAM, and deploying AI workloads."
+    },
+    {
+      "topic": "Semiconductor Validation & Power Management",
+      "details": "Gaining domain expertise in post-silicon semiconductor validation, power management ICs, hardware debugging, and test plan execution through professional work at UST Global."
+    },
+    {
+      "topic": "Industrial Automation, SCADA & BESS",
+      "details": "Exploring SCADA telemetry, industrial IoT communications, PLC concepts, and Battery Energy Storage Systems (BESS)."
+    }
   ],
   "hobbies": [
     "Reading books (History, famous personalities)",
