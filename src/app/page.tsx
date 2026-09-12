@@ -312,9 +312,24 @@ export default function Home() {
             About Me
           </h2>
           <Card className="glassmorphism border-white/5 bg-secondary/30 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-500">
-            <CardContent className="p-6 md:p-8">
+            <CardContent className="p-6 md:p-8 space-y-5">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Computer Science Engineering graduate with hands-on professional experience in Post Silicon Semiconductor Validation at UST Global, working in the Power Management domain. Skilled in building intelligent software solutions using Generative AI, LangChain, LangGraph, and Python. Experienced across AI-enabled applications, computer vision, Android development, IoT, and full-stack systems. Actively deepening expertise in AI, computer networking (CCNA), cloud platforms (Azure &amp; GCP), Linux (RHCSA), SCADA, and semiconductor validation — driven to build reliable, intelligent solutions that bridge software and hardware domains.
+                I&apos;m <span className="text-foreground font-semibold">M. S. Yashwanth Kumar</span>, a Computer Science Engineer passionate about building <span className="text-primary font-medium">intelligent, reliable, and real-world technology solutions</span> across <span className="text-primary font-medium">AI, software, networking, and semiconductor systems</span>.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                I have a strong foundation in <span className="text-foreground font-medium">C, C++, Python, SQL, and computer science fundamentals</span>, with hands-on experience in Generative AI, LangChain, LangGraph, computer vision, full-stack development, Android, IoT, Linux, and networking. I enjoy turning ideas into practical systems that combine software, intelligence, and hardware.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                I also have a growing professional interest in <span className="text-primary font-medium">semiconductor engineering and post-silicon validation</span>. I&apos;m particularly interested in <span className="text-foreground font-medium">platform validation, hardware-software interaction, BIOS/UEFI, power management, drivers, USB, PCIe, storage, system stability, and performance validation</span>. Working around semiconductor platforms has strengthened my understanding of how hardware and software work together at the system level.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Alongside semiconductor technologies, I&apos;m expanding my knowledge in <span className="text-primary font-medium">AI/Generative AI, cloud computing, computer networks, Linux, SCADA, and Battery Energy Storage Systems (BESS)</span>. I&apos;m especially interested in areas where <span className="text-foreground font-medium">AI, automation, embedded/connected systems, and semiconductor technology</span> intersect.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                I believe the best way to learn technology is to <span className="text-primary font-medium">build, experiment, troubleshoot, and continuously improve</span>. My goal is to grow into an engineer capable of working across software and hardware domains while building intelligent, scalable, and impactful systems.
+              </p>
+              <p className="text-foreground font-bold text-lg tracking-wide pt-2">
+                Build. Validate. Automate. Innovate.
               </p>
             </CardContent>
           </Card>
@@ -435,7 +450,15 @@ export default function Home() {
                     </Badge>
                   </div>
                 </div>
-                <h4 className="text-green-400 font-medium text-lg">UST Global <span className="text-muted-foreground text-sm font-normal">· Power Management Domain Client</span></h4>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shrink-0 border border-white/20 shadow-sm overflow-hidden">
+                    <img src="/ust-logo.webp" alt="UST Global" className="w-full h-full object-contain p-1" />
+                  </div>
+                  <div>
+                    <h4 className="text-green-400 font-medium text-lg leading-tight">UST Global</h4>
+                    <p className="text-muted-foreground text-sm">Power Management Domain Client</p>
+                  </div>
+                </div>
                 <ul className="space-y-2 text-muted-foreground list-disc list-inside marker:text-green-500/50">
                   <li>Working as a Post Silicon Semiconductor Validation Engineer, supporting a leading Power Management domain client.</li>
                   <li>Performing post-silicon validation and functional testing of power management ICs and semiconductor devices.</li>
@@ -456,7 +479,15 @@ export default function Home() {
                     <Calendar className="w-3 h-3" /> Feb 2026 – May 2026
                   </Badge>
                 </div>
-                <h4 className="text-primary font-medium text-lg">MindMatrix</h4>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0 border border-white/10 shadow-sm overflow-hidden">
+                    <span className="text-primary font-bold text-sm">MM</span>
+                  </div>
+                  <div>
+                    <h4 className="text-primary font-medium text-lg leading-tight">MindMatrix</h4>
+                    <p className="text-muted-foreground text-sm">Bengaluru, Karnataka</p>
+                  </div>
+                </div>
                 <ul className="space-y-2 text-muted-foreground list-disc list-inside marker:text-primary/50">
                   <li>Integrated LLM APIs for intelligent mobile features.</li>
                   <li>Built AI-enabled Android applications from scratch.</li>
