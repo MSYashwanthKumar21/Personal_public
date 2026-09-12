@@ -456,7 +456,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-green-400 font-medium text-lg leading-tight">UST Global</h4>
-                    <p className="text-muted-foreground text-sm">Power Management Domain Client</p>
+                    <p className="text-muted-foreground text-sm">Bengaluru, Karnataka</p>
                   </div>
                 </div>
                 <ul className="space-y-2 text-muted-foreground list-disc list-inside marker:text-green-500/50">
