@@ -460,7 +460,8 @@ export default function Home() {
                   </div>
                 </div>
                 <ul className="space-y-2 text-muted-foreground list-disc list-inside marker:text-green-500/50">
-                  <li>Working as a Post Silicon Semiconductor Validation Engineer, supporting a leading Power Management domain client.</li>
+                  <li>Working as a Post Silicon Semiconductor Validation Engineer, for client.</li>
+                  <li>Currently working in the Power Management domain.</li>
                   <li>Performing post-silicon validation and functional testing of power management ICs and semiconductor devices.</li>
                   <li>Collaborating with hardware and firmware teams to identify, debug, and document silicon-level issues.</li>
                   <li>Executing test plans and validation scripts to verify device specifications and power delivery behavior.</li>
